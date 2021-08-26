@@ -10,7 +10,7 @@ app.use(express.json());
 // configure sessions
 app.use(session(
   {
-    secret: '1234567890',
+    secret: 't35GtnjjrwT1MRIrWuaKTLIhWIL4W4YKOgsdi0JmzpY',
     resave: false,
     saveUninitialized: false,
     cookie: {

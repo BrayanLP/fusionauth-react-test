@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
       // POST request to /introspect endpoint
       {
         method: 'POST',
-        uri: `http://localhost:${config.fusionAuthPort}/oauth2/introspect`,
+        uri: `https://fusionauth.elastika.pe:${config.fusionAuthPort}/oauth2/introspect`,
         form: {
           'client_id': config.clientID,
           'token': req.session.token
@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
             // GET request to /registration endpoint
             {
               method: 'GET',
-              uri: `http://localhost:${config.fusionAuthPort}/api/user/registration/${introspectResponse.sub}/${config.applicationID}`,
+              uri: `https://fusionauth.elastika.pe:${config.fusionAuthPort}/api/user/registration/${introspectResponse.sub}/${config.applicationID}`,
               json: true,
               headers: {
                 'Authorization': config.apiKey
